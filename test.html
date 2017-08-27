@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://g.alicdn.com/de/prismplayer/1.9.9/skins/default/index-min.css">
+    <style>
+        html {
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            padding: 0;
+            margin: 0 auto;
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
+    </style>
+    <script src="https://g.alicdn.com/de/prismplayer/1.9.9/prism-min.js"></script>
+</head>
+<body>
+<div id="J_prismPlayer" class="prism-player" style="position: absolute;"></div>
+<script>
+	var source;
+	var player;
+    function setPlayer(params) {
+		player && player.stop();
+		player = null;
+		var obj = Object.assign({}, {
+			id: 'J_prismPlayer',
+			width: '100%',
+			height: '214px',
+			autoplay: true,
+			//支持播放地址播放,此播放优先级最高
+			source: '',
+			//播放方式二：推荐
+//		vid: '1e067a2831b641db90d570b6480fbc40',
+			playauth: '',
+			domainRegion: 'cn-shanghai',
+			cover: ''
+		}, params);
+		player = new prismplayer(obj);
+		player.on('hideBar', function (e) {
+
+		});
+		player.on('pause', function (e) {
+
+		});
+		player.on('ready', function (e) {
+
+		});
+		player.on('uiReady', function (e) {
+
+		});
+		player.on('ended', function (e) {
+
+		});
+		player.on('liveStreamStop', function (e) {
+
+		});
+		player.on('m3u8Retry', function (e) {
+
+		});
+		player.on('hideBar', function (e) {
+
+		});
+	}
+
+	function print() {
+		console.log(player._player)
+		for (let key in player) {
+			console.log(key, player[key])
+		}
+	}
+
+	function lanscape() {
+		postMessage && postMessage(JSON.stringify({
+			type: "orientation"
+		}))
+	}
+
+
+</script>
+
+</body>
+</html>
